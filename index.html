@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamaha U3A - Pianoforte usato Verticale a Milano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans" x-data="{ activeImage: 0, images: ['/api/placeholder/800/600', '/api/placeholder/800/600', '/api/placeholder/800/600'] }">
+    <div class="container mx-auto px-4 py-12">
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-gray-900 mb-4 font-serif">Yamaha U3A</h1>
+            <p class="text-2xl text-gray-600 italic">L'eccellenza sonora incontra l'eleganza</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
+                    <img :src="images[activeImage]" alt="Yamaha U3A Pianoforte" class="w-full h-auto transition-opacity duration-500" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+                </div>
+                <div class="flex justify-center space-x-4">
+                    <template x-for="(image, index) in images" :key="index">
+                        <button @click="activeImage = index" class="w-20 h-20 rounded-lg overflow-hidden border-2 transition-all duration-200" :class="{'border-blue-500 shadow-lg': activeImage === index, 'border-gray-300': activeImage !== index}">
+                            <img :src="image" alt="Thumbnail" class="w-full h-full object-cover">
+                        </button>
+                    </template>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-xl p-8">
+                <h2 class="text-3xl font-semibold mb-6 font-serif">Dettagli del Pianoforte</h2>
+                <ul class="space-y-4 text-lg">
+                    <li class="flex items-center"><span class="w-1/3 font-bold">Marca:</span> Yamaha</li>
+                    <li class="flex items-center"><span class="w-1/3 font-bold">Modello:</span> U3A</li>
+                    <li class="flex items-center"><span class="w-1/3 font-bold">Tipo:</span> Pianoforte Verticale</li>
+                    <li class="flex items-center"><span class="w-1/3 font-bold">Condizioni:</span> <span class="text-green-600 font-semibold">Ottime</span></li>
+                    <li class="flex items-center"><span class="w-1/3 font-bold">Ubicazione:</span> Città Studi, Milano (1° piano)</li>
+                    <li class="flex items-center"><span class="w-1/3 font-bold">Prezzo:</span> <span class="text-2xl font-bold text-blue-600">4500</span></li>
+                </ul>
+
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold mb-4 font-serif">Descrizione</h3>
+                    <p class="text-gray-700 leading-relaxed">Il Yamaha U3A è la quintessenza dell'eccellenza nel mondo dei pianoforti verticali. Rinomato per la sua straordinaria qualità sonora e l'impareggiabile affidabilità, questo strumento rappresenta la scelta ideale per musicisti esigenti, studenti avanzati e insegnanti di musica. La ricchezza del suo tono, la precisione del tocco e la bellezza del design lo rendono un pezzo d'arte funzionale, capace di elevare qualsiasi ambiente musicale.</p>
+                </div>
+
+                <div class="mt-10">
+                    <h3 class="text-2xl font-semibold mb-4 font-serif">Contatto</h3>
+                    <p class="text-gray-700">Per organizzare una visione o per ulteriori informazioni, non esitate a contattarmi:</p>
+                    <p class="font-semibold mt-2 text-lg">locale.crescita0m@icloud.com</p>
+                </div>
+
+                <div class="mt-10 flex space-x-4">
+                    <button class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-md">Contattami</button>
+                    <button class="flex-1 bg-gray-200 text-gray-800 py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-300 transition duration-300 shadow-md">Richiedi Video</button>
+                </div>
+            </div>
+        </main>
+
+        <section class="mt-16 bg-white rounded-xl shadow-xl p-8">
+            <h2 class="text-3xl font-semibold mb-6 font-serif text-center">Caratteristiche Principali</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Suono Eccezionale</h3>
+                    <p class="text-gray-600">Tono ricco e profondo, caratteristico dei pianoforti Yamaha di alta gamma.</p>
+                </div>
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Tocco Sensibile</h3>
+                    <p class="text-gray-600">Meccanica precisa per un'esperienza di suono reattiva e gratificante.</p>
+                </div>
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Design Elegante</h3>
+                    <p class="text-gray-600">Estetica raffinata che si adatta perfettamente a qualsiasi ambiente.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 text-gray-600">
+            <p>&copy; 2024 Vendita Pianoforte Yamaha U3A. Tutti i diritti riservati.</p>
+        </footer>
+    </div>
+</body>
+</html>
